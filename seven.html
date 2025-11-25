@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol type="1">
+        <li>Apple</li>
+        <li>Bannana</li>
+        <li>Grapes</li>
+    </ol>
+    <ul style="list-style: disc;">
+        <li>Hello</li>
+        <li>Welcome!</li>
+    </ul>
+
+    <!-- All ids were p1 (invalid). Keep one id only. -->
+    <p id="p1">Para1</p>
+    <p>Para2</p>
+    <p>Para3</p>
+
+    <button class="mybtn">Button1</button>
+    <button class="mybtn">Button2</button>
+
+    <script>
+        function changeButton(){
+
+            // Correct spelling: backgroundColor
+            document.getElementById("p1").style.backgroundColor = "lightyellow";
+
+            // "listItem" changed to correct variable name "listItems"
+            document.querySelectorAll("ol li").forEach(item => {
+                item.style.color = "blue";
+            });
+
+            // Correct spelling: addEventListener
+            document.querySelectorAll(".mybtn").forEach(button => {
+                button.addEventListener("click", function(){
+                    this.textContent="Clicked!";
+                });
+            });
+
+            const paragraphs = document.querySelectorAll("p");
+            paragraphs.forEach(p => {
+                p.style.fontSize = "50px";
+            });
+
+            // ".sp" didn't exist → change selector to first <p>
+            const specialElement = document.querySelector("p");
+            specialElement.textContent = "Changed item!";
+        }
+    </script>
+<br><br>
+    <button onclick="changeButton()">Changes</button>
+</body>
+</html>

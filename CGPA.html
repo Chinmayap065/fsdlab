@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let students=[
+            {name:"Alice",marks:90},
+            {name:"Bob",marks:95},
+            {name:"Charles",marks:80},
+        ];
+        //convert marks into subjects
+        let swc=students.map(s=>{
+            return{
+                name:s.name,
+                marks:(s.marks/10).toFixed(2)
+            }
+        });
+        let top1=swc.filter(s=>s.marks>=9);
+        document.write("Students with above 9 CGPA:","<br>");
+        top1.forEach(s => {
+            document.write("name:"+s.name+",CGPA:"+s.marks,"<br>");
+          
+        });
+        let result=top1.reduce(count=>count+1,0);
+        document.write("Total students:",result)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="name">Enter your name:</label>
+        <input type="text" name="name" required>
+        <br><br>
+        <label for="email">Enter your email:</label>
+        <input type="email" name="email" required>
+        <br><br>
+        <label for="password">Enter your password:</label>
+        <input type="password" name="password" required>
+        <br><br>
+        <label for="address">Enter your address:</label><br>
+        <textarea name="address" id="address" cols="50" rows="4"></textarea>
+        <br><br>
+        <label for="sex">Select your Gender:</label>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="sex" value="male">
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="sex" value="female">
+        <br><br>
+        <label for="country">Select a country:</label>
+        <select name="country" id="country">
+            <option value="select option">Select Country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="China">China</option>
+        </select> 
+        <br><br>
+        <label for="hobbies">Select hobbies:</label>
+        <input type="checkbox" name="hobbies" name="cricket" value="cricket">cricket
+        <input type="checkbox" id="hobbies" name="football" value="football">football
+        <br><br>
+        <label for="file">Choose a file:</label>
+        <input type="file" id="pdf" name="myfile" required>
+        <br><br>
+        <label type="image">Choose an image:</label>
+        <input type="file" id="image" name="myfile" accept="image/*" required>
+        <br><br>
+        <label for="mulfile">Upload Multiple file:</label>
+        <input type="file" id="multiimg" name="myfiles[]" accept=".pdf,.docx,.txt,.doc" required>
+        <br><br>
+        <input type="submit" value="login!">
+        <br><br>
+        <input type="reset" value="reset">
+    </form>
+</body>
+</html>

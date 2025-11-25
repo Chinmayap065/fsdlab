@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #successMsg {
+            color: green;
+            font-weight: bold;
+        }
+        #strengthMsg {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body onclick="showAlert(event)">
+    <h1>JavaScript</h1>
+
+    <!-- Button and Success message -->
+    <button id="myBtn">Click me!</button>
+    <p id="successMsg"></p>
+
+    <!-- Dynamic typing -->
+    <h3>Type something:</h3>
+    <input type="text" id="myInput" placeholder="Type Something...">
+    <p id="dynamicPara"></p>
+
+    <!-- Password strength -->
+    <h3>Enter your password:</h3>
+    <input type="password" id="password" placeholder="Enter password...">
+    <p id="strengthMsg"></p>
+
+    <script>
+
+        // 1️⃣ Alert when clicking on body only
+        function showAlert(event) {
+            if (event.target.tagName === "BODY") {
+                alert('You clicked on the page');
+            }
+        }
+
+        // 2️⃣ Button click event
+        const btn = document.getElementById("myBtn");
+        const successMsg = document.getElementById("successMsg");
+
+        btn.addEventListener("click", function(event) {
+             // Prevent triggering body alert
+            btn.textContent = "Clicked!";
+            successMsg.textContent = "Button clicked successfully!";
+        });
+
+        // 3️⃣ Dynamic text update on typing
+        const input = document.getElementById("myInput");
+        const dynamicPara = document.getElementById("dynamicPara");
+
+        input.addEventListener("input", function() {
+            dynamicPara.textContent = input.value;
+        });
+
+        // 4️⃣ Password strength indicator
+        const password = document.getElementById("password");
+        const strengthMsg = document.getElementById("strengthMsg");
+
+        password.addEventListener("input", function() {
+            const passLength = password.value.length;
+
+            if (passLength === 0) {
+                strengthMsg.textContent = "";
+            } else if (passLength < 4) {
+                strengthMsg.textContent = "Weak";
+                strengthMsg.style.color = "red";
+            } else if (passLength < 8) {
+                strengthMsg.textContent = "Medium";
+                strengthMsg.style.color = "orange";
+            } else {
+                strengthMsg.textContent = "Strong";
+                strengthMsg.style.color = "green";
+            }
+        });
+
+    </script>
+
+</body>
+</html>
